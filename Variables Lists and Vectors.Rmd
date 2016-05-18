@@ -1,0 +1,83 @@
+---
+title: "Part 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Getting comfortable with R.
+
+## Startup
+If you've already installed both R and R studio. You're ready to begin. 
+
+Open RStudio. RStudio is a development environment for R. R runs inside RStudio. 
+
+When RStudio first runs you'll be greeted with a message about your current version of R and some other notes. The part of the RStudio screen that is currently displaying this is called the Console. The console is how you directly interact with the R program. You can type code directly in and R will directly respond to you. Later on, we'll talk about scripts, which allow you to save a series of console commands to be executed, but for now we'll only interact with R through the console.
+
+This can be intimidating, but don't worry too much about it. you'll get familiar with the console very quickly. Let's play around with it. One of the things the console can do is basic math.
+```{r Basic Math}
+1+2
+
+100*42 #The operator for multiplication is '*'.
+
+42 / 6 #The operator for division is '/'.
+
+10 %% 3 #This is a modulus, which gives the remainderafter division (10 / 3 = 3 r1)
+
+3 ^ 3 #The exponential operator is '^'
+
+
+```
+'#' is the comment character in R. R ignores everything to the right of one in a line. If I need to draw your attention to something in a particular line of code, I'll be doing it with comments.
+
+
+## Variables Lists and Vectors
+
+### Variables
+
+What we've been doing so far is just giving R expressions to evaluate. Without any context, R will evaluate an expression it's given and print it out. To make this explicitly what we want to happen we can call a function called print.
+```{r Hello World}
+print("Hello, World!") #Hello World is a string, which is a set of characters. More on that later.
+
+print(12^2)
+```
+Functions take arguments, the stuff in parentheses, and do something to them. A function could do anything really, but print is simple it just asks the computer to write something out. We'll do more with functions later, but that's all we need to know for now.
+
+So all we've been able to do so far is print some basic math. If we want to save something for later we can create and assign a variable. These are two different steps in some languages, but with r, we just use one operator: "<-".
+
+```{r}
+ApplePrice <- 0.3 # Set ApplePrice Equal to 0.3
+```
+As you can see, setting a variable doesn't result in anything being printed. We can recall the value of our variable by using print or just typing the variable name. If it helps to remember how to use "<-" pretend you're using an arrow to insert the value into the name.
+
+```{r}
+print(ApplePrice)
+
+BananaPrice <- .1
+BananaPrice
+
+BananaPrice <- .5 #updating the price is the same as initially setting it.
+BananaPrice
+```
+You can also use a variable to set itself. R evaluates the term on the right hand first, and then sets the left hand variable equal to the result.
+```{r}
+ApplePrice <- ApplePrice + 1
+ApplePrice
+
+OrderTotal <- 10 * ApplePrice + 50 * BananaPrice #Calculating a bill total.
+OrderTotal
+#Note PEMDAS normal order of operations applies to all math in R.
+```
+
+
+So far, we've used only numbers as variables, but we can use text or strings as well.
+
+```{r Names}
+Name <- "Bill"
+Greeting <- c('Hello, ', Name)
+Greeting
+```
+## Lists and Vectors
+Prices <- list (ApplePrice = .3, BananaPrice = .1, OrangePrice = .75)
+Prices
